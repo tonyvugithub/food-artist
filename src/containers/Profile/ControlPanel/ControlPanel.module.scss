@@ -1,0 +1,30 @@
+@import "../../../shared/globalVariable";
+
+.ControlPanel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  grid-gap: 5px;
+  padding: 0 5px;
+  li {
+    a {
+      padding: 10px 10px;
+    }
+    border: thin solid $pink;
+    border-radius: 4px;
+  }
+}
+
+@media (min-width: 800px) {
+  .ControlPanel {
+    display: block;
+    li {
+      height: fit-content;
+      width: 150px;
+      margin-bottom: 5px;
+      a{
+        text-align: start;
+      }
+    }
+  }
+}

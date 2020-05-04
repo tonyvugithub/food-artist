@@ -1,0 +1,24 @@
+@import "../../../shared/globalVariable";
+
+.Feature {
+  background-color: $lightPurple;
+  padding: 10px 0;
+  color: $darkPurple;
+  font-weight: bold;
+  a {
+    text-decoration: none;
+    color: inherit;
+    p {
+      margin: 0;
+    }
+  }
+  -webkit-transition: background-color 1s ease-out;
+  -moz-transition: background-color 1s ease-out;
+  -o-transition: background-color 1s ease-out;
+  transition: background-color 1s ease-out;
+  cursor: pointer;
+  &:hover {
+    background-color: $darkPurple;
+    color: white;
+  }
+}

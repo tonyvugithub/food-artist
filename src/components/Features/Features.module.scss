@@ -1,0 +1,92 @@
+@import "../../shared/globalVariable";
+.Container {
+  justify-self: center;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #f3f3f3;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");  display: grid;
+}
+
+.Join {
+  text-align: center;
+  align-items: center;
+  background-color: $skyBlue;
+  padding: 10px;
+  -webkit-transition: background-color 1s ease-out;
+  -moz-transition: background-color 1s ease-out;
+  -o-transition: background-color 1s ease-out;
+  transition: background-color 1s ease-out;
+
+  * {
+    display: inline-block;
+    text-transform: uppercase;
+  }
+  h2 {
+    color: white;
+    margin: 0 15px 15px 0;
+  }
+  a {
+    text-decoration: none;
+    color: $darkPurple;
+    background-color: $lightPurple;
+    padding: 15px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid $darkPurple;
+    cursor: pointer;
+    &:hover {
+      background-color: $darkPurple;
+      color: white;
+      border-color: $lightPurple;
+      ;
+    }
+  }
+}
+
+.OpeningText {
+  width: 100%;
+  text-align: center;
+  h2 {
+    color: $skyBlue;
+    font-family: cursive;
+  }
+  p{
+    font-weight: 500;
+  }
+}
+
+.Features {
+  width: 100%;
+  text-align: center;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+
+@media (max-width: 499px) {
+  .Join {
+    * {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .Container {
+    width: 95vw;
+  }
+  .Features {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (min-width: 1200px) {
+  .Container {
+    width: 1170px;
+  }
+  .Features {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

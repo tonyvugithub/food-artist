@@ -1,0 +1,44 @@
+@import '../../../shared/globalVariable';
+
+.Button {
+  background-color: transparent;
+  border: 1px solid gray;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box ;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.GetStarted {
+  background-color: $green;
+  border-radius: 7px;
+  color: white;
+  font-style: italic;
+  border: 2px solid lightgreen;
+  font-size: 2rem;
+}
+
+.Continue {
+  background-color: $darkPurple;
+  color: white;
+  font-weight: bold;
+  min-width: 100px;
+  &:hover {
+    background-color: $lightPurple;
+    color: $darkPurple;
+  }
+}
+
+.Cancel {
+  background-color: orangered;
+  color: white;
+  font-weight: bold;
+  min-width: 100px;
+  &:hover {
+    background-color: orange;
+    color: orangered;
+  }
+} 

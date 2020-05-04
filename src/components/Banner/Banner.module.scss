@@ -1,0 +1,17 @@
+@import "../../shared/globalVariable";
+
+.Banner {
+  justify-content: center;
+  display: grid;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+@media (min-width: 1200px) {
+  .Banner {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 585px 585px;
+    margin: 0 auto;
+  }
+}

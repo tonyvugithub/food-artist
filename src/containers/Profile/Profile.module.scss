@@ -1,0 +1,20 @@
+.Profile {
+  display: grid;
+  grid-template-rows: auto auto;
+  margin-bottom: 40px;
+}
+@media (min-width: 800px){
+  .Profile {
+    display: flex;
+    width: 95vw;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1200px){
+  .Profile {
+    display: flex;
+    width: 1170px;
+    margin: 0 auto;
+  }
+}

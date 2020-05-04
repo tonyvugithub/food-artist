@@ -1,0 +1,21 @@
+@import '../../shared/globalVariable';
+
+.Samples {
+  width: 95vw;
+  justify-self: center;
+  justify-content: center;
+  .Heading {
+    text-align: center;
+    font-family: cursive;
+    color: $skyBlue;
+  }
+}
+
+@media (min-width: 1200px) {
+  .Samples {
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    width: 1170px;
+  }
+}

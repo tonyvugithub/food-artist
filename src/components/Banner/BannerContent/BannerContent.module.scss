@@ -1,0 +1,79 @@
+@import "../../../shared/globalVariable";
+
+.BannerContent {
+  justify-self: center;
+  align-self: center;
+  align-items: center;
+  text-align: center;
+  .TopLine {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 15px 0;
+    text-transform: uppercase;
+  }
+  .Title {
+    font-size: 5rem;
+    padding: 15px 0;
+    font-family: cursive;
+    color: $darkPurple;
+  }
+  .Paragraph {
+    font-size: 2rem;
+    margin: 0;
+    padding: 15px 0;
+  }
+  .GetStartedBtn {
+    margin: 40px 0 60px 0;
+    a {
+      background-color: $green;
+      text-decoration: none;
+      color: white;
+      font-style: italic;
+      border: 2px solid lightgreen;
+      border-radius: 7px;
+      width: 200px;
+      padding: 15px 20px;
+      font-size: 2rem;
+    }
+  }
+}
+
+@media (max-width:1000px){
+  .BannerContent {
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+    .TopLine {
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 10px 0;
+      text-transform: uppercase;
+    }
+    .Title {
+      font-size: 4rem;
+      padding: 10px 0;
+      font-family: cursive;
+      color: $darkPurple;
+    }
+    .Paragraph {
+      font-size: 1.5rem;
+      margin: 0;
+      padding: 10px 0;
+    }
+    .GetStartedBtn {
+      margin: 40px 0 60px 0;
+      a {
+        background-color: $green;
+        text-decoration: none;
+        color: white;
+        font-style: italic;
+        border: 2px solid lightgreen;
+        border-radius: 7px;
+        width: 200px;
+        padding: 10px 20px;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

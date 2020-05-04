@@ -1,0 +1,18 @@
+.Search {
+  width: 100%;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+  .Search {
+    width: 95vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .Search {
+    width: 1170px;
+  }
+}
+

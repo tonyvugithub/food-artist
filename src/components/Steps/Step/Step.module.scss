@@ -1,0 +1,18 @@
+@import '../../../shared/globalVariable';
+
+.Step {
+  width: 95vw;
+  display: block;
+  border-bottom: thin solid $sectionBorder;
+  .Heading {
+    font-style: oblique;
+    color: $green;
+    font-family: cursive  }
+}
+
+@media (min-width:1000px){
+  .Step{
+    width: 100%;
+    border: none;
+  }  
+}

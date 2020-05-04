@@ -1,0 +1,30 @@
+@import "../../shared/globalVariable";
+
+.Steps {
+  text-align: center;
+  justify-self: center;
+  font-weight: 500;
+  .Heading {
+    font-family: cursive;
+    color: $skyBlue;
+  }
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+@media (min-width: 1000px) {
+  .Steps {
+    width: 95vw;
+    .Content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 35px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .Steps {
+    width: 1170px;
+  }
+}

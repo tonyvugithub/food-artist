@@ -1,0 +1,50 @@
+@import "../../../shared/globalVariable";
+.NavContainer {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: white;
+  box-shadow: 0 2px 3px $lightPurple;
+}
+
+.NavigationBar {
+  width: 1170px;
+  height: 90px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  .Logo {
+    height: 80%;
+    margin: 0;
+  }
+  nav {
+    height: 100%;
+  }
+}
+
+@media (max-width: 1199px) {
+  .NavigationBar {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 499px) {
+  .NavigationBar{
+    width: 100%;
+    margin: 0;
+  }
+  .Logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .Desktop {
+    display: none;
+  }
+}

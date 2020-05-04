@@ -1,0 +1,54 @@
+.Recipe {
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  cursor: pointer;
+  width: 20rem;
+  margin: 0 5px;
+  div img {
+    width: 100%;
+    transition: transform 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.3);
+    }
+    display: block;
+  }
+  .Content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba($color: #000, $alpha: 0.5);
+    color: white;
+    p {
+      margin: 0;
+      padding: 2px 2px;
+    }
+    .Title {
+      font-weight: bold;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .Summary {
+      font-style: oblique;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.SearchModule {
+  width: auto;
+  height: 300px;
+}
+
+@media (max-width: 500px) {
+  .Summary {
+    display: none;
+  }
+  .SearchModule {
+    height: auto;
+  }
+}
