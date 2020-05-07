@@ -1,7 +1,15 @@
+@import "../../shared/globalVariable";
+
 .Profile {
   display: grid;
   grid-template-rows: auto auto;
   margin-bottom: 40px;
+  .User {
+    font-size: 1.5rem;
+    color: $darkPurple;
+    font-weight: bold;
+    text-align: center;
+  }
 }
 @media (min-width: 800px){
   .Profile {

@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Recipes from 'components/Recipes/Recipes';
+import classes from './RecipeCollection.module.scss';
 
-const RecipeCollection = () => {
+const RecipeCollection = (props) => {
   return (
-    <div>
-      This is Collection
+    <div className={classes.RecipeCollection}>
+      <Recipes recipes={props.recipes} collectionClass={true}/>
     </div>
   )
 }

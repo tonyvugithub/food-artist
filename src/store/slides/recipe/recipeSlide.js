@@ -13,10 +13,6 @@ export const recipeSlice = createSlice({
     recipeStart: (state) => {
       state.isLoading = true;
     },
-    initRandomRecipes: (state, action) => {
-      state.recipes = action.payload;
-      state.isLoading = false;
-    },
     resetRecipes: (state, action) => {
       state.recipes = null;
       state.numberOfRecipes = 5;
@@ -33,25 +29,7 @@ export const recipeSlice = createSlice({
   },
 });
 
-export const { initRandomRecipes, searchRecipeByName, resetRecipes, increaseRecipeNumber, recipeStart } = recipeSlice.actions;
-
-export const initRandomRecipesAsync = () => (dispatch) => {
-  dispatch(recipeStart());
-  axios
-    .get(`/random?number=10&apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}`)
-    .then((res) =>
-      res.data.recipes.map((recipe) => ({
-        id: recipe.id,
-        title: recipe.title,
-        src: recipe.image,
-        summary: recipe.summary,
-      }))
-    )
-    .then((recipes) => {
-      dispatch(initRandomRecipes(recipes));
-    })
-    .catch((err) => console.log(err));
-};
+export const { searchRecipeByName, resetRecipes, increaseRecipeNumber, recipeStart } = recipeSlice.actions;
 
 export const searchRecipeByNameAsync = (name, number) => dispatch => {
   dispatch(recipeStart());

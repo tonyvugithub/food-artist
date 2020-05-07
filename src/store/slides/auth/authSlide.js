@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { faCreativeCommonsPd } from "@fortawesome/free-brands-svg-icons";
 
 export const authSlice = createSlice({
   name: "auth",
@@ -9,7 +8,7 @@ export const authSlice = createSlice({
     userId: null,
     error: null,
     loading: false,
-    authRedirectPath: "/profile/info",
+    authRedirectPath: "/profile",
   },
   //actions + reducers
   reducers: {
@@ -70,22 +69,27 @@ export const authenticate = (data, isInRegisterMode) => (dispatch) => {
           userId: response.data.localId,
         })
       );
-      
+
       setWithExpiry(
         "authToken",
         { token: response.data.idToken, userId: response.data.localId },
         response.data.expiresIn
       );
-      
-      axios
-        .post(`https://react-cook-book-b40f3.firebaseio.com/users.json?auth=${response.data.idToken}`, {
-          userId: response.data.localId,
-          displayName: data.firstname + " " + data.lastname,
-        })
-        .then((res) => {})
-        .catch((err) => console.log(err));
+      if (isInRegisterMode) {
+        axios
+          .post(
+            `https://react-cook-book-b40f3.firebaseio.com/users.json?auth=${response.data.idToken}`,
+            {
+              userId: response.data.localId,
+              displayName: data.firstname + " " + data.lastname,
+            }
+          )
+          .then((res) => {})
+          .catch((err) => console.log(err));
+      }
     })
     .catch((error) => {
+      alert("Something went wrong!!!");
       dispatch(authFail({ error: error.response.data.error.message }));
     });
 };

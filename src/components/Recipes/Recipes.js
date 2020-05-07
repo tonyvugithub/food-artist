@@ -8,10 +8,12 @@ const recipes = (props) => {
       {props.recipes.map((recipe) => (
         <Recipe
           key={recipe.id}
+          recipeId={recipe.id}
           title={recipe.title}
           summary={recipe.summary}
           src={recipe.src}
           searchClass={props.searchClass}
+          collectionClass={props.collectionClass}
         />
       ))}
     </div>

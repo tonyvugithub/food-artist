@@ -1,10 +1,17 @@
 import React from "react";
 import classes from "./Recipe.module.scss";
+import {withRouter} from 'react-router-dom';
 
 const recipe = (props) => {
-  const recipeClass = props.searchClass ? [classes.Recipe, classes.SearchModule] : [classes.Recipe];
+  const recipeClickHandler = (recipeId) => {
+    //alert(`Recipe ${recipeId} Clicked!`);
+    props.history.push(`/recipe/${recipeId}`);
+  };
+
+  let recipeClass = props.searchClass ? [classes.Recipe, classes.SearchModule] : props.collectionClass ? [classes.Recipe, classes.ProfileCollection] : [classes.Recipe];
+   
   return (
-    <div className={recipeClass.join(' ')}>
+    <div className={recipeClass.join(' ')} onClick={()=>recipeClickHandler(props.recipeId)}>
       <div>
         <img src={props.src} alt={props.title} />
       </div>
@@ -15,4 +22,4 @@ const recipe = (props) => {
     </div>
   );
 };
-export default recipe;
+export default withRouter(recipe);

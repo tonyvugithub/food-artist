@@ -1,11 +1,12 @@
 import React from 'react'
 
-const UserInfo = () => {
+const UserInfo = (props) => {
   return (
     <div>
-      This is UserInfo
+      <p>Display Name: {props.displayName}</p>
+      <p>Email: {props.email}</p>
     </div>
   )
 }
 
-export default UserInfo
+export default UserInfo;

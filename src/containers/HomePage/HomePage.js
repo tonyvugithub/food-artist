@@ -5,7 +5,9 @@ import Samples from "components/Samples/Samples";
 import Steps from "components/Steps/Steps";
 import Features from "components/Features/Features";
 
-const homePage = () => {
+
+const HomePage = () => {
+
   return (
     <div className={classes.HomePage}>
       <Banner />
@@ -16,4 +18,4 @@ const homePage = () => {
   );
 };
 
-export default homePage;
+export default HomePage;

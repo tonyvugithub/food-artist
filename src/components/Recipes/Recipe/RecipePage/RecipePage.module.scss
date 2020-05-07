@@ -1,0 +1,47 @@
+@import "../../../../shared/globalVariable";
+
+.RecipePage {
+  width: 95vw;
+  box-sizing: border-box;
+  margin: 0 auto;
+  .RecipeImg {
+    img{
+      width: 100%;
+    }
+    margin-bottom: 10px;
+  }
+  .FetchButton {
+    text-align: center;
+  }
+  h3 {
+    color: $skyBlue;
+    margin: 0;
+  }
+  p {
+    margin: 5px 0 15px 0;
+  }
+  span{
+    color: $pink;
+    cursor: pointer;
+    &:hover{
+      color: $lightPurple;
+    }
+  }
+  
+}
+
+@media (min-width: 800px) {
+  .RecipeSummary {
+    width: 85vw;
+    .RecipeImg {
+      width: 500px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .RecipeSummary {
+    width: 1170px;
+  }
+}

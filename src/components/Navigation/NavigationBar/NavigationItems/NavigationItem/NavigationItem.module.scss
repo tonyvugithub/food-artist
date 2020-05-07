@@ -36,10 +36,10 @@
     a {
       color: $darkPurple;
       padding: 17px 10px;
-      -webkit-transition: background-color 1s ease-out;
-      -moz-transition: background-color 1s ease-out;
-      -o-transition: background-color 1s ease-out;
-      transition: background-color 1s ease-out;
+      -webkit-transition: background-color 400ms ease-out;
+      -moz-transition: background-color 400ms ease-out;
+      -o-transition: background-color 400ms ease-out;
+      transition: background-color 400ms ease-out;
       &:hover,
       &:active {
         background-color: $darkPurple;

@@ -7,6 +7,10 @@ import HomePage from "./containers/HomePage/HomePage";
 import {validateExistingToken} from 'store/slides/auth/authSlide';
 import classes from "./App.module.scss";
 
+const RecipePage = React.lazy(() => {
+  return import("components/Recipes/Recipe/RecipePage/RecipePage");
+});
+
 const Profile = React.lazy(() => {
   return import("./containers/Profile/Profile");
 });
@@ -36,6 +40,7 @@ const App = () => {
 
   const routes = (
     <Switch>
+      <Route path="/recipe/:id" render={(props) => <RecipePage {...props}/>}/>
       <Route path="/search" render={(props)=><Search {...props}/>}/>
       <Route path="/register" render={(props)=><Register {...props}/>}/>
       <Route path="/login" render={(props)=><Login {...props}/>}/> />
