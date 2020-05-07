@@ -60,7 +60,7 @@ const RecipePage = (props) => {
   };
 
   return (
-    <div className={classes.RecipeSummary}>
+    <div className={classes.RecipePage}>
       <div className={classes.RecipeImg}>
         <img src={recipeImg} alt={recipeTitle} />
       </div>
