@@ -6,6 +6,7 @@ export const profileSlide = createSlice({
   initialState: {
     displayName: "",
     recipeCollection: [],
+    tags:[],
     isLoading: false,
     error: ""
   },
@@ -31,11 +32,14 @@ export const profileSlide = createSlice({
     getCollectionFail: (state, action) => {
       state.isLoading = false;
       state.error = action.payload;
+    },
+    getTagsSuccess: (state, action) => {
+      state.tags = action.payload;
     }
   }
 });
 
-export const { getNameStart, getNameSuccess, getNameFail, getCollectionStart, getCollectionSuccess, getCollectionFail} = profileSlide.actions;
+export const { getNameStart, getNameSuccess, getNameFail, getCollectionStart, getCollectionSuccess, getCollectionFail, getTagsSuccess} = profileSlide.actions;
 
 export const selectProfileState = state => state.profile;
 
@@ -64,6 +68,15 @@ export const getCollectionAsync = (token, userId) => dispatch => {
       .catch(err => {
         dispatch(getCollectionFail(err.response.data.error.message));
       });
+}
+
+export const getTagsAsync = (token, userId) => dispatch => {
+  axios
+      .get(
+        `https://react-cook-book-b40f3.firebaseio.com/tags/${userId}/.json?auth=${token}`
+      )
+      .then((res) => dispatch(getTagsSuccess(res.data.tags)))
+      .catch((err) => console.log(err));
 }
 
 export default profileSlide.reducer;

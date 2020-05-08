@@ -1,7 +1,26 @@
 .RecipeCollection {
-  div {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 10px;
+  .TagBox {
+    label{
+      display: block;
+      padding: 5px 0;
+      font-weight: bold;
+    }
+    input{
+      padding: 5px;
+      font-size: 1.1em;
+      margin: 0 auto;
+      border: thin solid lightpink;
+      &:focus {
+        outline: none;
+        background-color: #ccc;
+      }
+    }
+  }
+  .Content {
+    div {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 10px;
+    }
   }
 }

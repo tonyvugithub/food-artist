@@ -89,7 +89,6 @@ export const authenticate = (data, isInRegisterMode) => (dispatch) => {
       }
     })
     .catch((error) => {
-      alert("Something went wrong!!!");
       dispatch(authFail({ error: error.response.data.error.message }));
     });
 };

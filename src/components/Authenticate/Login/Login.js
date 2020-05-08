@@ -7,8 +7,7 @@ import Input from "components/UI/Input/Input";
 import Button from "components/UI/Button/Button";
 import Spinner from "components/UI/Spinner/Spinner";
 import classes from "./Login.module.scss";
-/* import ErrorMessage from "components/UI/ErrorMessage/ErrorMessage";
-import axios from "axios"; */
+import ErrorMessage from "components/UI/ErrorMessage/ErrorMessage";
 import {
   authenticate,
   selectAuthState,
@@ -17,7 +16,7 @@ import {
 const Login = (props) => {
   const { register, handleSubmit, errors } = useForm();
 
-  const { token, loading, authRedirectPath } = useSelector(selectAuthState);
+  const { token, loading, authRedirectPath, error } = useSelector(selectAuthState);
 
   const dispatch = useDispatch();
 
@@ -90,6 +89,7 @@ const Login = (props) => {
   return (
     <div className={classes.Login}>
       {authRedirect}
+      {(error==="INVALID_PASSWORD" || error === "EMAIL_NOT_FOUND") && <ErrorMessage>Invalid Email or Password</ErrorMessage>}
       {form}
     </div>
   );

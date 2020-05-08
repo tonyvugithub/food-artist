@@ -7,14 +7,13 @@ import Input from "components/UI/Input/Input";
 import Button from "components/UI/Button/Button";
 //import Spinner from "../../components/UI/Spinner/Spinner"; */
 import classes from "./Register.module.scss";
-/* import ErrorMessage from "components/UI/ErrorMessage/ErrorMessage";
-import axios from "axios"; */
+import ErrorMessage from "components/UI/ErrorMessage/ErrorMessage";
 import { authenticate, selectAuthState } from "store/slides/auth/authSlide";
 
 const Register = (props) => {
   const { register, handleSubmit, errors } = useForm();
 
-  const {token, authRedirectPath} = useSelector(selectAuthState);
+  const {token, authRedirectPath, error} = useSelector(selectAuthState);
   
   const dispatch = useDispatch();
 
@@ -119,6 +118,7 @@ const Register = (props) => {
   return (
     <div className={classes.Register}>
       {authRedirect}
+      {error && <ErrorMessage>{error}</ErrorMessage>}
       <form onSubmit={handleSubmit(onSubmit)}>
         {form}
         <Button btnType="Continue">Continue</Button>
@@ -126,8 +126,7 @@ const Register = (props) => {
           Reset
         </Button>
       </form>
-      {/* <Route path={props.match.path + "/info"} component={UserData} />
-       */}
+      
     </div>
   );
 };
