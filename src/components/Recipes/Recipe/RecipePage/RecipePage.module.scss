@@ -9,11 +9,20 @@
     margin-top: 10px;
   }
   .TagBox {
-    * {
+    label{
       display: block;
+      padding: 5px 0;
+      color: $darkPurple;
+      font-weight: bold;
     }
     input{
+      padding: 5px;
       margin: 0 auto;
+      border: thin solid gray;
+      &:focus {
+        outline: none;
+        background-color: #ccc;
+      }
     }
   }
 }

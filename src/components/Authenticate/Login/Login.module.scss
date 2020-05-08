@@ -2,10 +2,12 @@
 
 .Login {
   justify-content: center;
+  text-align: center;
   form {
     width: 90%;
     margin: 0 auto;
     border: thin solid $lightPurple;
+    text-align: left;
     button {
       grid-column: 1/3;
     }

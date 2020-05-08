@@ -3,7 +3,7 @@ import React from "react";
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import classes from "./Input.module.scss";
 
-const input = ({elementType, label, elementConfig,value,register,error, autofocus, name}) => {
+const input = ({elementType, label, elementConfig,value,register,error, autofocus, name, onchange}) => {
   let inputElement = null;
   const inputclasses = [classes.InputElement];
 
@@ -42,6 +42,7 @@ const input = ({elementType, label, elementConfig,value,register,error, autofocu
           value={value}
           name={name}
           ref={register}
+          onChange={onchange}
         >
           {elementConfig.options.map((option) => (
             <option key={option.value} value={option.value}>

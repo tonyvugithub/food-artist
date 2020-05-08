@@ -53,7 +53,7 @@ const App = () => {
 
   return (
     <div className={classes.App}>
-      <Layout><Suspense fallback={<p>Loading...</p>}>{routes}</Suspense></Layout>
+      <Layout><Suspense fallback={<p></p>}>{routes}</Suspense></Layout>
     </div>
   );
 };
