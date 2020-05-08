@@ -1,0 +1,35 @@
+@import "../../../../../shared/globalVariable";
+
+.RecipeDetails {
+  width: 100%;
+  .RecipeImg {
+    img {
+      width: 100%;
+    }
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    color: $skyBlue;
+    margin: 0;
+  }
+  p {
+    margin: 5px 0 15px 0;
+  }
+  span {
+    color: $pink;
+    cursor: pointer;
+    &:hover {
+      color: $lightPurple;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .RecipeDetails{
+    .RecipeImg {
+      width: 500px;
+      margin: 0 auto 20px auto;
+    }
+  }
+}

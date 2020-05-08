@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import {useSelector} from 'react-redux';
-import {selectAuthState} from 'store/slides/auth/authSlide';
+import { useSelector } from "react-redux";
+import { selectAuthState } from "store/slides/auth/authSlide";
 import classes from "./RecipePage.module.scss";
 import axios from "axios";
 
 import Button from "components/UI/Button/Button";
-const _ = require('lodash');
+import RecipeDetails from "./RecipeDetails/RecipeDetails";
+const _ = require("lodash");
 
 const RecipePage = (props) => {
-  const {token, userId} = useSelector(selectAuthState);
+  const { token, userId } = useSelector(selectAuthState);
   const recipeId = props.match.params.id;
 
   const [recipeTitle, setRecipeTitle] = useState("");
@@ -17,6 +18,8 @@ const RecipePage = (props) => {
   const [recipeSteps, setRecipeSteps] = useState([]);
   const [showSteps, setShowSteps] = useState(false);
   const [recipeImg, setRecipeImg] = useState("");
+  const [tag, setTag] = useState("");
+  const [showFinalizeButton, setShowFinalizeButton] = useState(false);
 
   useEffect(() => {
     axios
@@ -43,62 +46,61 @@ const RecipePage = (props) => {
       });
   }, [recipeId]);
 
-  const fetchButtonClickHandler = (recipeId) => {
+  const fetchButtonClickHandler = () => {
     //If not signin, you are not allow to add, promt to sign in
     //Choose a tag to organize the recipes
     const recipeInfo = {
       id: recipeId,
       title: recipeTitle,
       summary: recipeSummary,
-      steps: recipeSteps.map(step => _.pick(step, ['number','step'])),
+      steps: recipeSteps.map((step) => _.pick(step, ["number", "step"])),
       src: recipeImg,
-      userId: userId
+      userId: userId,
+      tag: tag,
     };
-    axios.post(`https://react-cook-book-b40f3.firebaseio.com/recipes.json?auth=${token}`,recipeInfo)
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
+    axios
+      .post(
+        `https://react-cook-book-b40f3.firebaseio.com/recipes.json?auth=${token}`,
+        recipeInfo
+      )
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   };
 
   return (
     <div className={classes.RecipePage}>
-      <div className={classes.RecipeImg}>
-        <img src={recipeImg} alt={recipeTitle} />
-      </div>
-      <div>
-        <h3>Recipe Title:</h3>
-        <p>{recipeTitle}</p>
-      </div>
-      <div className={classes.RecipeSummary}>
-        <h3>Recipe Summary:</h3>
-        {!showSummary && (
-          <span onClick={() => setShowSummary(!showSummary)}>Click to read...</span>
+      <RecipeDetails
+        recipeTitle={recipeTitle}
+        recipeSummary={recipeSummary}
+        recipeSteps={recipeSteps}
+        recipeImg={recipeImg}
+        showSummary={showSummary}
+        setShowSummary={setShowSummary}
+        showSteps={showSteps}
+        setShowSteps={setShowSteps}
+      />
+
+      <div className={classes.Buttons}>
+        {!showFinalizeButton && (
+          <Button
+            btnType="Continue"
+            onclick={() => setShowFinalizeButton(!showFinalizeButton)}
+          >
+            Fetch this recipe!
+          </Button>
         )}
-        {/*dangerouslySetInnerHTML={{ __html: recipeSummary}}  convert the html tag inside the summary text*/}
-        {showSummary && <p dangerouslySetInnerHTML={{ __html: recipeSummary }}/>}
-        {showSummary && (
-          <span onClick={() => setShowSummary(!showSummary)}>...minimize</span>
+        {showFinalizeButton && (
+          <React.Fragment>
+            <div className={classes.TagBox}>
+              <label for="tag">Please create a tag for this recipe</label>
+              <input type="text" name="tag" value={tag} onChange={(event) => {setTag(event.target.value)}}></input>
+            </div>
+            <Button btnType="Continue" onclick={fetchButtonClickHandler}>
+              Continue
+            </Button>
+          </React.Fragment>
         )}
-      </div>
-      <div>
-        <h3>Instructions:</h3>
-        {!showSteps && (
-          <span onClick={() => setShowSteps(!showSteps)}>Click to read...</span>
-        )}
-        {showSteps && (
-          <div>
-            {recipeSteps.map((step) => (
-              <p key={step.number}>
-                Step {step.number}: {step.step}
-              </p>
-            ))}
-          </div>
-        )}
-        {showSteps && (
-          <span onClick={() => setShowSteps(!showSteps)}>...minimize</span>
-        )}
-      </div>
-      <div className={classes.FetchButton}>
-        <Button btnType="Continue" onclick={()=>fetchButtonClickHandler(recipeId)}>Fetch this recipe!</Button>
+        <Button btnType="Cancel" onclick={()=>props.history.goBack()}>Search Again</Button>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import SearchBar from "./SearchBar/SearchBar";
@@ -16,6 +16,11 @@ import classes from "./Search.module.scss";
 
 const Search = () => {
   const dispatch = useDispatch();
+  useEffect(() => {
+    return () => {
+      dispatch(resetRecipes());
+    }
+  }, [dispatch])
 
   const { recipes, numberOfRecipes, nameOfFood } = useSelector(
     selectRecipeState
