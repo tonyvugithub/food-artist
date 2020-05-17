@@ -1,11 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const CreateRecipe = () => {
-  return (
-    <div>
-      This is Create
-    </div>
-  )
-}
+  return <div>This future is not available at the moment</div>;
+};
 
-export default CreateRecipe
+export default CreateRecipe;
