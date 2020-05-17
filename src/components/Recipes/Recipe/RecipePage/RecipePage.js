@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { selectAuthState } from "store/slides/auth/authSlide";
-import classes from "./RecipePage.module.scss";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { selectAuthState } from 'store/slides/auth/authSlide';
+import classes from './RecipePage.module.scss';
+import axios from 'axios';
 
-import Button from "components/UI/Button/Button";
-import RecipeDetails from "./RecipeDetails/RecipeDetails";
+import Button from 'components/UI/Button/Button';
+import RecipeDetails from './RecipeDetails/RecipeDetails';
 
-const _ = require("lodash");
+const _ = require('lodash');
 
 const RecipePage = (props) => {
   const { token, userId } = useSelector(selectAuthState);
   const recipeId = props.match.params.id;
 
-  const [recipeTitle, setRecipeTitle] = useState("");
-  const [recipeSummary, setRecipeSummary] = useState("");
+  const [recipeTitle, setRecipeTitle] = useState('');
+  const [recipeSummary, setRecipeSummary] = useState('');
   const [showSummary, setShowSummary] = useState(false);
   const [recipeSteps, setRecipeSteps] = useState([]);
   const [showSteps, setShowSteps] = useState(false);
-  const [recipeImg, setRecipeImg] = useState("");
-  const [tag, setTag] = useState("");
+  const [recipeImg, setRecipeImg] = useState('');
+  const [tag, setTag] = useState('');
   const [showFinalizeButton, setShowFinalizeButton] = useState(false);
   const [currentTags, setCurrentTags] = useState([]);
 
@@ -64,7 +64,7 @@ const RecipePage = (props) => {
       id: recipeId,
       title: recipeTitle,
       summary: recipeSummary,
-      steps: recipeSteps.map((step) => _.pick(step, ["number", "step"])),
+      steps: recipeSteps.map((step) => _.pick(step, ['number', 'step'])),
       src: recipeImg,
       userId: userId,
       tag: tag,
@@ -109,7 +109,11 @@ const RecipePage = (props) => {
         {!showFinalizeButton && (
           <Button
             btnType="Continue"
-            onclick={() => setShowFinalizeButton(!showFinalizeButton)}
+            onclick={
+              token
+                ? () => setShowFinalizeButton(!showFinalizeButton)
+                : () => props.history.push('/login')
+            }
           >
             Fetch this recipe!
           </Button>
@@ -117,15 +121,20 @@ const RecipePage = (props) => {
         {showFinalizeButton && (
           <React.Fragment>
             <div className={classes.TagBox}>
-              <label htmlFor="tags">Please choose/create a tag for this recipe</label>
-              <input 
-                type="text" 
-                name="tags" 
-                list="tags" 
+              <label htmlFor="tags">
+                Please choose/create a tag for this recipe
+              </label>
+              <input
+                type="text"
+                name="tags"
+                list="tags"
                 placeholder="Eg: abc"
-                onChange={ event => setTag(event.target.value)}/>
+                onChange={(event) => setTag(event.target.value)}
+              />
               <datalist id="tags">
-                {currentTags.map(tag=><option key={tag}>{tag}</option>)}
+                {currentTags.map((tag) => (
+                  <option key={tag}>{tag}</option>
+                ))}
               </datalist>
             </div>
             <Button btnType="Continue" onclick={fetchButtonClickHandler}>

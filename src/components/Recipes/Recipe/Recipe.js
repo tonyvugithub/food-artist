@@ -1,6 +1,6 @@
-import React from "react";
-import classes from "./Recipe.module.scss";
-import { withRouter } from "react-router-dom";
+import React from 'react';
+import classes from './Recipe.module.scss';
+import { withRouter } from 'react-router-dom';
 
 const recipe = (props) => {
   const recipeClickHandler = (recipeId) => {
@@ -16,7 +16,7 @@ const recipe = (props) => {
 
   return (
     <div
-      className={recipeClass.join(" ")}
+      className={recipeClass.join(' ')}
       onClick={() => recipeClickHandler(props.recipeId)}
     >
       <div>
@@ -24,7 +24,10 @@ const recipe = (props) => {
       </div>
       <div className={classes.Content}>
         <p className={classes.Title}>{props.title}</p>
-        <p className={classes.Summary} dangerouslySetInnerHTML={{ __html: props.summary}}></p>
+        <p
+          className={classes.Summary}
+          dangerouslySetInnerHTML={{ __html: props.summary }}
+        ></p>
       </div>
     </div>
   );
