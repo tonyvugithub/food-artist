@@ -25,8 +25,8 @@ You will also see any lint errors in the console.
  - Apply React hooks for modern React app development 
  - Modularize codes for easy maintenance and update
  - __Supported packages__:
-   -- `React Router`
-   -- `React Hook Form`
+   .-`React Router`
+   .- `React Hook Form`
    
 ### `Redux`
  - Apply `Redux Toolkit` for compact codes structure and logic flows
