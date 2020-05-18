@@ -17,4 +17,9 @@ You will also see any lint errors in the console.
 ## Built with
 
 ### `React`
- - Built modern React app using React hooks
+ - Apply React hooks for modern React app development 
+ - Modulize codes for easy maintenance and update
+ 
+### `Redux`
+ - Apply `Redux Toolkit` for compact code structure and logic flows
+ - 
