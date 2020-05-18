@@ -29,7 +29,7 @@ You will also see any lint errors in the console.
  
 ### `SCSS Module`
  - Apply unique class structure of SCSS to avoid CSS conflicts 
- - Focus on developing for mobile first then other screen sizes
+ - Focus on Mobile First design strategy when doing responsive design
 
 ### `Firebase`
  - Authenticate User through Firebase REST API 
