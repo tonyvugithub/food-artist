@@ -18,8 +18,13 @@ You will also see any lint errors in the console.
 
 ### `React`
  - Apply React hooks for modern React app development 
- - Modulize codes for easy maintenance and update
- 
+ - Modularize codes for easy maintenance and update
+ #### Supported packages:
+   - `React Router`
+   - `React Hook Form`
+   
 ### `Redux`
- - Apply `Redux Toolkit` for compact code structure and logic flows
- - 
+ - Apply `Redux Toolkit` for compact codes structure and logic flows
+ - Utilize the power of `Redux Dev Tools` to improve app efficiency
+ 
+### ``
