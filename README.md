@@ -18,6 +18,7 @@ You will also see any lint errors in the console.
  - Users can fetch the recipe they like to their personal __Cook Book__ just by one-click
  - Retrieve fetched recipes through tag structure that is easy to navigate
  - Users can create their own recipes (This feature is currently __unavailable__ & will be updated in a future time)
+ - Users can share recipes to their social medias (This feature is currently __unavailable__ & will be updated in a future time)
 ## Built with
 
 ### `React`
