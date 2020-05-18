@@ -13,7 +13,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
-
+## App Features
+ - __Recipe Management App__ that allows user to search for recipes by typing in the food/drink name in the __Search Module__
+ - Users can fetch the recipe they like to their personal __Cook Book__ just by one-click
+ - Retrieve fetched recipes through tag structure that is easy to navigate
+ - Users can create their own recipe (This feature is currently __unavailable__ , will be updated in a future time)
 ## Built with
 
 ### `React`
