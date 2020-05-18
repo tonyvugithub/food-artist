@@ -17,7 +17,7 @@ You will also see any lint errors in the console.
  - __Recipe Management App__ that allows user to search for 360,000+ recipes by typing in the food/drink name in the __Search Module__
  - Users can fetch the recipe they like to their personal __Cook Book__ just by one-click
  - Retrieve fetched recipes through tag structure that is easy to navigate
- - Users can create their own recipe (This feature is currently __unavailable__ & will be updated in a future time)
+ - Users can create their own recipes (This feature is currently __unavailable__ & will be updated in a future time)
 ## Built with
 
 ### `React`
