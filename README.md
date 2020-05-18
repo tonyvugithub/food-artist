@@ -27,4 +27,6 @@ You will also see any lint errors in the console.
  - Apply `Redux Toolkit` for compact codes structure and logic flows
  - Utilize the power of `Redux Dev Tools` to improve app efficiency
  
-### ``
+### `SCSS Module`
+ - Apply unique class structure of SCSS to avoid CSS conflicts 
+ - Focus on developing for mobile first then other screen sizes
