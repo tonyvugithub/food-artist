@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux]() and [Redux Toolkit]() template
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://github.com/reduxjs/redux) and [Redux Toolkit](https://github.com/reduxjs/redux-toolkit) template
 
 Link to deployment: [https://food-artist.herokuapp.com/](https://food-artist.herokuapp.com/)
 
