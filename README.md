@@ -30,3 +30,7 @@ You will also see any lint errors in the console.
 ### `SCSS Module`
  - Apply unique class structure of SCSS to avoid CSS conflicts 
  - Focus on developing for mobile first then other screen sizes
+
+### `Firebase`
+ - Authenticate User through Firebase REST API 
+ - Create supported real-time database for storing extra information that cannot be handled by REST API
