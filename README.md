@@ -16,7 +16,5 @@ You will also see any lint errors in the console.
 
 ## Built with
 
-`
-**React**
-`
+` __React__ `
 *Built modern React app using React hooks
